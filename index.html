@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=10">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <title>火星捕手-收银端</title>
+        <link rel="shortcut icon" href="http://hxypic.oss-cn-hangzhou.aliyuncs.com/bitbug_favicon.ico">
+        <link rel="stylesheet" href="static/css/reset.css">
+        <!-- <link rel="stylesheet" href="//at.alicdn.com/t/font_360610_xsreqc8v2tltbj4i.css"> -->
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_360610_ma56bkj65o0tfbt9.css">
+        <!-- <link rel="stylesheet" href="//at.alicdn.com/t/font_496349_eb7p8idquhqcl3di.css"> -->
+        <script src="static/js/jQuery-2.1.4.min.js"></script>
+        <script src="static/js/jQuery.speech.min.js"></script>
+        <script src="static/js/jquery.jqprint-0.3.js"></script>
+        <script src="static/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="static/js/qrcode.js"></script>
+        <!-- <script src="static/js/flexible.js"></script> -->
+        <script src="static/js/Base64.js"></script>
+        <!-- <script src="static/js/md5.js"></script> -->
+        <script src="static/js/es6-promise.auto.min.js"></script>
+        <script src="static/js/sockjs-1.1.1.js"></script>
+        <script src="static/js/stomp.js"></script>
+
+        <!-- 壳子js -->
+        <script src="static/js/qwebchannel.js"></script>
+        <script src="static/js/wsock.js"></script>
+        <script src="static/js/gbk.js"></script>
+
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+    <script type="text/javascript">
+        // new QWebChannel(qt.webChannelTransport, function(channel) {
+        //     window.bridge = channel.objects.bridge;
+        //     //Web connect the Qt signal, then Qt can call "output" function
+        //     // bridge.SigSendMessageToJS.connect(function(str) {  
+        //     //     alert("Received string from Qt: " + str);  
+        //     // }); 
+        //     console.log(bridge);
+        //     bridge.PrintTcpFail.connect(function(str) {
+        //         alert("没有找到网口打印机，请检查！");  
+        //     }); 
+        // })
+
+
+        // if (bridge) {
+        //         bridge.Open("",function(returnvalue){
+        //             console.log(returnvalue);
+        //             // if(returnvalue>0){
+
+        //             // }else{
+        //             //     alert('没有找到打印机');
+        //             // }
+        //         });
+        //         // bridge.PrintCmd(printID, printData.join(","));
+        //         // bridge.Close(printID);
+        // }
+
+
+        function print_(printID,printData){
+            // alert("printID:"+printID)
+            // console.log("printID:"+printID,"printData:"+printData);
+                if (bridge) {
+                    bridge.Open(printID,function(returnvalue){
+                        console.log(returnvalue)
+                        // if(returnvalue>0){
+
+                        // }else{
+                        //     alert('没有找到打印机');
+                        // }
+                    });
+                // }
+                bridge.PrintCmd(printID, printData.join(","));
+                bridge.Close(printID);
+                }
+            // try{
+            // }catch(err){
+            //     alert('请使用收银客户端进行打印1');
+            // };
+
+        };
+        function printTcp_(printIP_Port,printData){
+            if (bridge) {
+                bridge.PrintTcp(printIP_Port.ip, printIP_Port.port, printData.join(","));
+            }
+            // try{
+            // }catch(err){
+            //     alert('请使用收银客户端进行打印2');
+            // };
+
+        };
+    </script>
+</html>

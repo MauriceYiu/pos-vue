@@ -1,0 +1,328 @@
+.retiredOrder {
+	width: 100%;
+	height: 100%;
+	.completeOrderCon {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	.completeOrderList.list_openDetail {
+		width: 59%;
+		margin-right: 2%;
+	}
+	.completeOrderList {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 2;
+		transition: width .3s ease-in-out;
+		-moz-transition: width .3s ease-in-out;
+		-webkit-transition: width .3s ease-in-out;
+		-o-transition: width .3s ease-in-out;
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 0 11px 0 rgba(230, 106, 106, 0.47);
+		.orderType {
+			height: 65px;
+			font-size: 16px;
+			padding-left: 5%;
+			.typeItem {
+				width: 110px;
+				height: 30px;
+				border: solid 1px #e87474;
+				background: #fff;
+				color: #e87474;
+				border-radius: 100px;
+				cursor: pointer;
+				margin-right: 5%;
+				text-align: center;
+				line-height: 30px;
+			}
+			.typeItem.active {
+				background: #e87474;
+				color: #fff;
+			}
+		}
+		.titleTable {
+			color: #444;
+			border-collapse: collapse;
+			width: 94%;
+			margin: 0 auto;
+			font-size: 18px;
+			tr {
+				height: 70px;
+				cursor: pointer;
+				th {
+					font-size: 18px;
+					font-weight: 600;
+					color: #444444;
+					vertical-align: middle;
+					text-align: center;
+				}
+			}
+		}
+		.scrollBox {
+			height: calc( 100% - 70px );
+			overflow: hidden;
+		}
+		.scroll {
+			height: 100%;
+			overflow-y: scroll;
+			margin-right: -17px;
+			li {
+				color: #444;
+				font-size: 18px;
+				height: 70px;
+				line-height: 70px;
+				cursor: pointer;
+				position: relative;
+				text-align: center;
+				padding: 0 3%;
+				.orderItem {
+					height: 100%;
+					box-sizing: border-box;
+					border-bottom: solid 1px #ddd;
+				}
+				span {
+					height: 100%;
+				}
+				.goodsSpan {
+					font-size: 16px;
+				}
+				.BB {
+					border-bottom: 1px solid #ddd;
+				}
+			}
+			li:hover {
+				background-color: rgb(216,216,216);
+			}
+			.active {
+				color: #fff;
+				background-image: linear-gradient(to right, #e66a6a, #f3b6b6);
+				.orderItem {
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.orderDetail {
+		width: 39%;
+		height: 100%;
+		background-color: #fff;
+		border-radius: 8px;
+		font-size: 18px;
+		box-shadow: 0 0 11px 0 rgba(230, 106, 106, 0.47);
+		position: absolute;
+		z-index: 1;
+		right: 0;
+		top: 0;
+		.msgBox {
+			width: 100%;
+			padding: 0 5%;
+			box-sizing: border-box;
+			height: 29%;
+			background: url(../../../../assets/pinkBG.png) no-repeat right top;
+			-webkit-background-size: cover;
+			background-size: cover;
+			border-radius: 8px;
+			color: #fff;
+			.msgItem {
+				height: 20%;
+				// max-height: 45px;
+				font-size: 18px;
+				.name {
+					height: 100%;
+				}
+				.itemVal {
+					height: 100%;
+				}
+				.goodsBox {
+					width: 100%;
+					height: auto;
+					ul {
+						width: 100%;
+						li {
+							height: 50px;
+							line-height: 50px;
+							border-bottom: 1px dashed #979797;
+							.goodName {
+								margin-right: 7%;
+							}
+							.price {
+								color: #CB4A4F;
+							}
+						}
+						li:last-child {
+							border: none;
+						}
+					}
+				}
+			}
+		}
+		.goodsBox {
+			height: 43%;
+			.name {
+				padding: 10px 6.5% 0;
+				font-size: 18px;
+				color: #444;
+				height: 40px;
+				line-height: 40px;
+			}
+			.goods {
+				margin: 0 5.5%;
+				height: calc( 100% - 60px );
+				overflow: hidden;
+				ul {
+					height: 100%;
+					overflow-y: scroll;
+					margin-right: -18px;
+				}
+				li {
+					height: 40px;
+					line-height: 40px;
+					padding: 0 3%;
+					border-bottom: 1px dashed #979797;
+					.goodName {
+						display: inline-block;
+						width: 50%;
+					}
+					.price {
+						width: 30%;
+						text-align: right;
+						color: #CB4A4F;
+					}
+					.number{
+						text-align: right;
+						width: 20%;
+					}
+				}
+				li:last-child {
+					border: none;
+				}
+			}
+		}
+		.returnResion {
+			padding: 0 7%;
+			height: 5%;
+			border-top: 1px solid #eee;
+			span {
+				height: 100%;
+			}
+		}
+		.pay_box {
+			width: 100%;
+			padding: 1% 1% 0 7.5% ;
+			box-sizing: border-box;
+			border-top: 1px solid #eee;
+			position: relative;
+			p {
+				width: 100%;
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			}
+			.pay_li{
+				height: 30px;
+				font-size: 18px;
+				div{
+					height: 100%;
+				}
+				.name {
+					font-size: 14px;
+					margin-right: 15px;
+				}
+				.number {
+					font-size: 18px;
+				}
+				.color_CB4A4F {
+					color: #CB4A4F;
+				}
+			}
+			.ready_order{
+				height: 13.3%;
+				button{
+					display: inline-block;
+					width: 20%;
+					height: 100%;
+					background-color: pink;
+					border:none;
+					border-radius: 20px;
+					color:#fff;
+				}
+			}
+		}
+		.notesBox {
+			padding: 20px 10px 0;
+			padding-left: 7.5%;
+			.notes {
+				font-size: 16px;
+				color: #666;
+				max-width: 70%;
+				margin: 0px 2%; 
+				overflow: hidden; 
+				text-overflow: ellipsis;
+				white-space: nowrap; 
+				text-align: left;
+			}
+		}
+	}
+
+	.mask {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background-color: rgba(0, 0, 0, .73);
+		z-index: 10;
+		.orderConfirmBox {
+			position: absolute;
+		    left: 50%;
+		    top: 50%;
+		    width: 420px;
+		    height: 170px;
+		    webkit-transform: translateX(-50%) translateY(-50%);
+		    transform: translateX(-50%) translateY(-50%);
+		    background: #fff;
+		    border-radius: 15px;
+		    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+		    box-sizing: border-box;
+		    .title {
+		    	text-align: center;
+		    	height: 50px;
+		    	line-height: 50px;
+		    	font-size: 18px;
+		    	font-weight: 600;
+		    	color: #444;
+		    }
+		    p {
+		    	text-align: center;
+		    	height: 60px;
+		    	line-height: 60px;
+		    }
+		    .btnGroup {
+		    	text-align: center;
+		    	padding-top: 10px;
+		    	button {
+		    		height: 30px;
+	    		    width: 80px;
+	    		    border-radius: 100px;
+	    		    font-size: 14px;
+	    		    border: none;
+	    		    background: none;
+		    	}
+		    	.cancel {
+		    		background-color: #ddd;
+	    		    color: #999;
+	    		    margin-right: 20px;
+		    	}
+		    	.save {
+		    		color: #fff;
+		    		background-color: #e87474;
+		    		box-shadow: 0 2px 10px 0 #e87474;
+		    	}
+		    }
+		}
+	}
+}

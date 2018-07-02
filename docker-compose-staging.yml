@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  pos-app:
+    image: registry-vpc.cn-hangzhou.aliyuncs.com/sumang/pos
+    deploy:
+      replicas: 1
+    labels:
+      aliyun.routing.port_80: http://pos-shell.huoxingy.com

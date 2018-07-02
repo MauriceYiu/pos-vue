@@ -1,0 +1,59 @@
+.check-bill {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  padding: 1.5%;
+  overflow: hidden;
+  overflow-y: scroll;
+  font-size: 16px;
+  .select-head {
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    span.start-time,
+    span.end-time {
+      padding: 0 15px;
+    }
+    .check-btn {
+      margin-left: 15px;
+    }
+  }
+  .check-res {
+    width: 100%;
+    padding-top: 10px;
+    height: calc(100% - 120px);
+    overflow: hidden;
+    overflow-y: scroll;
+    .centhe {
+      text-align: center;
+    }
+  }
+  .check-bottom {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    span {
+      font-size: 18px;
+      padding-right: 15px;
+      color: #e66a6a;
+      vertical-align: middle;
+      b {
+        color: #000;
+      }
+    }
+    .check-page {
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
